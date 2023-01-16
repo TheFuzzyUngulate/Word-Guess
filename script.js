@@ -1,7 +1,3 @@
-/*window.onload = () => {
-    startGame();
-}*/
-
 var getwordlist = new Promise((resolve, reject) => {
     var text = "";
     var request = new XMLHttpRequest();
@@ -39,10 +35,6 @@ function setUpGrid(grid) {
             cell.appendChild(text);
             row.appendChild(cell);
         }
-        //var popup = document.createElement("div");
-        //popup.className = "not-in-lexicon";
-        //popup.textContent = "Not in lexicon!";
-        //row.appendChild(popup);
         grid.appendChild(row);
     }
 
@@ -145,8 +137,7 @@ function handleInput(grid, key, wordlist, word) {
             }
 
             if (incorrect_letter == false) {
-                console.log("winner");
-                console.log(inputword.length);
+                // game was won
                 game_ended = true;
             }
 
@@ -158,7 +149,7 @@ function handleInput(grid, key, wordlist, word) {
                 }
 
                 else {
-                    console.log("game over");
+                    // game ended without guessing word
                     game_ended = true;
                 }
             }
@@ -214,7 +205,6 @@ function alertWordNotInLexicon() {
     setTimeout(() => {
         activeRow.removeChild(popup);
     }, 3000);
-    console.log(popup);
 }
 
 
@@ -227,7 +217,6 @@ function startGame() {
         setUpGrid(grid);
 
         var wordlist = value.split("\n");
-        console.log(wordlist);
         for (let i = 0; i < wordlist.length; i++) {
             wordlist[i] = wordlist[i].substring(0, wordlist[i].length - 1);
         }
