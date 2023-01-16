@@ -1,0 +1,214 @@
+body {
+    background-color: rgb(28, 28, 28);
+}
+
+* {
+    touch-action: manipulation;
+}
+
+div.centerer {
+    text-align: center;
+    border: 1px solid black;
+    vertical-align: center;
+}
+
+div.menubar {
+    width: auto;
+    height: 200px;
+    background-color: red;
+}
+
+div.guess_grid {
+    display: inline-grid;
+    padding-top: 10px;
+    padding-bottom: 0px;
+}
+
+div.guess_grid div.guess_row {
+    display: inline-block;
+    position: relative;
+    background-color: none;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-top: none;
+    margin-bottom: none;
+}
+
+div.not-in-lexicon {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    right: 0;
+    top: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    height: fit-content;
+}
+
+div.not-in-lexicon div.not-in-lexicon-body {
+    background-color: red;
+    width: fit-content;
+    padding: 10px;
+    height: fit-content;
+    font-size: 30px;
+    vertical-align: center;
+}
+
+div.not-in-lexicon > div.lex-arrow {
+    width: 0;
+    height: 0;
+    border-bottom: 10px solid red;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    margin: 0 auto;
+}
+
+div.not-in-lexicon.show {
+    animation: fadeOut 1s 2s;
+    -webkit-animation: fadeOut 1s 2s;
+}
+
+div.win-screen {
+
+}
+
+div.lose-screen {
+    
+}
+
+@-webkit-keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+div.guess_row div.letterbox {
+    display: inline-block;
+    background-color: rgb(73, 73, 73);
+    width: 104px;
+    height: 105px;
+    margin-left: 10px;
+    vertical-align: middle;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40pt;
+    font-weight: bold;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+div.letterbox > p.lettertext {
+    display: inline;
+    text-align: center;
+    vertical-align: middle;
+    /*border: 1px solid black;*/
+    width: 20px;
+    height: 20px;
+}
+
+div.onscreen-keyboard {
+    width: auto;
+    margin: 10px;
+    padding-top: 10px;
+    border: 1px solid black;
+    margin: 0 auto;
+}
+
+div.onscreen-keyboard div.keyboard-row {
+    width: auto;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+div.keyboard-row div.keyboard-key {
+    min-width: 80px;
+    height: 100px;
+    margin-left: 10px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: rgb(100, 100, 100);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40pt;
+    font-weight: bold;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+div.keyboard-key > p.keyboard-text {
+
+}
+
+@media only screen and (min-device-width: 480px) {
+    div.guess_row div.letterbox {
+        width: 52px;
+        height: 52.5px;
+        margin-left: 5px;
+        font-size: 25pt;
+    }
+
+    div.guess_grid div.guess_row {
+        margin-right: 5px;
+        margin-bottom: 5px;
+    }
+
+    div.guess_grid {
+        padding-top: 5px;
+    }
+
+    body {
+        background-color: white;
+    }
+
+    div.onscreen-keyboard {
+        width: 1000px;
+    }
+
+    div.keyboard-row div.keyboard-key {
+        min-width: 40px;
+        height: 50px;
+        margin-left: 5px;
+        text-align: center;
+        font-size: 25pt;
+    }
+
+    .centerer {
+        vertical-align: auto;
+    }
+
+    div.not-in-lexicon div.not-in-lexicon-body {
+        padding: 5px;
+        font-size: 15px;
+    }
+    
+    div.not-in-lexicon > div.lex-arrow {
+        border-bottom: 5px solid red;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+    }
+}

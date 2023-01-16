@@ -1,0 +1,60 @@
+/*var cur_row = grid.getElementsByClassName("guess_row")[cur_row_ind];
+            var incorrect_letter = false;
+
+            if (event.key === "Enter" && cur_row_ind < 6 && cur_cell_ind == 5) {
+                
+                if (wordlist.includes(inputword)) {
+                    var wordvals = compare_words(inputword, word);
+                    inputword = "";
+                    console.log(wordvals);
+
+                    for (var i = 0; i < 5; i++) {
+                        if (wordvals[i] == 2) {
+                            cur_row.getElementsByClassName("letterbox")[i].style.backgroundColor = "green";
+                            continue;
+                        }
+
+                        if (wordvals[i] == 1) {
+                            cur_row.getElementsByClassName("letterbox")[i].style.backgroundColor = "yellow";
+                            incorrect_letter = true;
+                            continue;
+                        }
+
+                        if (wordvals[i] == 0) {
+                            incorrect_letter = true;
+                            continue;
+                        }
+                    }
+
+                    if (incorrect_letter == false) {
+                        console.log("winner");
+                    }
+
+                    else {
+                        cur_row_ind++;
+                        cur_row = grid.getElementsByClassName("guess_row")[cur_row_ind];
+                        cur_cell_ind = 0;
+                        incorrect_letter = false;
+                    }
+                } 
+                
+                else {
+                    
+                }
+            }
+        
+            else if (event.key === "Backspace" && inputword.length > 0 && cur_cell_ind > 0) {
+                cur_row.getElementsByClassName("letterbox")[cur_cell_ind-1].textContent = "";
+                cur_cell_ind--;
+                inputword = inputword.substring(0, inputword.length - 1);
+            }
+
+            else if (isLetter(event.key) && cur_cell_ind < 5 && cur_row_ind < 6) {
+                cur_row.getElementsByClassName("letterbox")[cur_cell_ind].textContent = event.key;
+                cur_cell_ind++;
+                inputword += event.key;
+            }
+
+            else {
+            
+            }*/
